@@ -1,0 +1,7 @@
+region: ap-northeast-2
+clusterName: demo-eks
+
+ingressClass: alb
+
+enableWaf: false
+enableWafv2: false

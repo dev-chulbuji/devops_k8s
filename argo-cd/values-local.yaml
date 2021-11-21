@@ -1,0 +1,23 @@
+installCRD: true
+
+controller:
+  replicas: 1
+
+repoServer:
+  replicas: 1
+
+server:
+  replicas: 1
+  service:
+    type: NodePort
+    namedTargetPort: false
+  ingress:
+    enabled: false
+  extraArgs:
+    - --insecure
+
+redis:
+  enabled: true
+
+redis-ha:
+  enabled: false

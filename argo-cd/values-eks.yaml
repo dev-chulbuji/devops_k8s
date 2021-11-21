@@ -1,0 +1,27 @@
+installCRD: true
+
+controller:
+  replicas: 1
+
+repoServer:
+  replicas: 1
+
+server:
+  replicas: 1
+  service:
+    type: NodePort
+    namedTargetPort: false
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/tags: Environment=dev,Name=argocd-alb
+  extraArgs:
+    - --insecure
+
+redis:
+  enabled: true
+
+redis-ha:
+  enabled: false
