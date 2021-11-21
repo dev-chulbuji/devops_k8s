@@ -12,7 +12,7 @@ spec:
   project: {{ $app.name }}
   source:
     path: {{ $app.source.path }}
-    repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
+    repoURL: {{ $.Values.repoURL }}
     targetRevision: HEAD
     helm:
       valueFiles:
@@ -24,3 +24,4 @@ spec:
       - Validate=false
       - CreateNamespace=true
       - PrunePropagationPolicy=background
+{{- end }}
