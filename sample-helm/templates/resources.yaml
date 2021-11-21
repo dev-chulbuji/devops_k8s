@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ template "sample-helm.fullname" . }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
       {{- include "sample-helm.selectorLabels" . | nindent 6 }}
@@ -30,6 +30,6 @@ spec:
   - protocol: {{ .Values.service.protocol }}
     port: {{ .Values.service.port }}
     targetPort: {{ .Values.service.targetProt }}
-    nodePort: {{ .Values.service.nodeProt }}
+    nodePort: {{ .Values.service.nodePort }}
   selector:
     {{- include "sample-helm.selectorLabels" . | nindent 8 }}
