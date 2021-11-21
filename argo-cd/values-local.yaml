@@ -17,6 +17,7 @@ server:
     - --insecure
   config:
     accounts.admin: apiKey, login
+    accounts.test: apiKey, login
 
 redis:
   enabled: true
