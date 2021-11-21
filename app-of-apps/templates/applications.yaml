@@ -1,0 +1,26 @@
+{{- range $app := .Values.apps }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $app.name }}
+  namespace: argo
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  project: {{ $app.name }}
+  source:
+    path: {{ $app.source.path }}
+    repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
+      - PrunePropagationPolicy=background

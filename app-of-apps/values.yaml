@@ -1,0 +1,9 @@
+apps:
+  - name: sample-helm-1
+    project: dev
+    source:
+      path: sample-helm-1
+  - name: sample-helm-2
+    project: dev
+    source:
+      path: sample-helm-2
