@@ -9,7 +9,7 @@ spec:
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
-  project: {{ $app.name }}
+  project: {{ $app.project }}
   source:
     path: {{ $app.source.path }}
     repoURL: {{ $.Values.repoURL }}
