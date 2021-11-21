@@ -9,4 +9,4 @@ service:
   protocol: TCP
   targetPort: 80
   port: 80
-  nodePort: 30083
+  nodePort: 30082

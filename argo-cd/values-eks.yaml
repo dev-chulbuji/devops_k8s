@@ -19,6 +19,8 @@ server:
       alb.ingress.kubernetes.io/tags: Environment=dev,Name=argocd-alb
   extraArgs:
     - --insecure
+  config:
+    accounts.admin: apiKey, login
 
 redis:
   enabled: true
