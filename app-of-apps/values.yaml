@@ -8,3 +8,7 @@ apps:
     project: dev
     source:
       path: sample-helm-2
+  - name: sample-helm-3
+    project: dev
+    source:
+      path: sample-helm-3
