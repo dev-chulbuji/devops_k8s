@@ -9,6 +9,6 @@ spec:
     protocol: TCP
     port: 80
     targetPort: 80
-    nodePort: 30082
+    nodePort: 30081
   selector:
     run: sample-yaml
