@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sample-helm-1
+  namespace: argo
+spec:
+  destination:
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  project: test
+  source:
+    repoURL: https://github.com/dev-chulbuji/devops_k8s.git
+    targetRevision: HEAD
+    path: sample-helm-1
+    helm:
+      valueFiles:
+        - values.yaml
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
+      - PrunePropagationPolicy=background

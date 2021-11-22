@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sameple-yaml
+  namespace: argo
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: test
+  source:
+    repoURL: https://github.com/dev-chulbuji/devops_k8s.git
+    targetRevision: HEAD
+    path: sample-yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+
+  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#      allowEmpty: false
+    syncOptions:
+    - Validate=false
+    - CreateNamespace=true
+    - PrunePropagationPolicy=foreground

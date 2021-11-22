@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: test
+  namespace: argo
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Test Project
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: default
+    server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+  - group: ''
+    kind: Namespace
+
+  namespaceResourceBlacklist:
+  - group: ''
+    kind: ResourceQuota
+  - group: ''
+    kind: LimitRange
+  - group: ''
+    kind: NetworkPolicy
