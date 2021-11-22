@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sameple-yaml
+  name: sample-yaml
   namespace: argo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: test
+  project: dev
   source:
     repoURL: https://github.com/dev-chulbuji/devops_k8s.git
     targetRevision: HEAD

@@ -7,7 +7,7 @@ spec:
   destination:
     namespace: default
     server: 'https://kubernetes.default.svc'
-  project: test
+  project: dev
   source:
     repoURL: https://github.com/dev-chulbuji/devops_k8s.git
     targetRevision: HEAD

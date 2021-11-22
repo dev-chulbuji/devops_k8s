@@ -1,14 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: test
+  name: dev
   namespace: argo
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  description: Test Project
+  description: dev Project
   sourceRepos:
   - '*'
+
   destinations:
   - namespace: default
     server: https://kubernetes.default.svc
