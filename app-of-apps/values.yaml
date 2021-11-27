@@ -1,5 +1,9 @@
 repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
 apps:
+  - name: demo
+    project: dev
+    source:
+      path: demo
   - name: sample-helm-1
     project: dev
     source:
