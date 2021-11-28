@@ -16,8 +16,39 @@ server:
   extraArgs:
     - --insecure
   config:
-    accounts.admin: apiKey, login
-    accounts.test: apiKey, login
+    url: http://127.0.0.1:30080
+
+    repositories: |
+      - url: https://github.com/dev-chulbuji/devops_k8s.git
+
+    accounts.alice: apiKey, login
+
+    dex.config: |
+      connectors:
+        - type: github
+          id: github
+          name: GitHub
+          config:
+            clientID: xxx
+            clientSecret: xxx
+            orgs:
+            - name: xxx
+
+  rbacConfig:
+    policy.default: role:readonly
+    policy.csv: |
+      p, role:local-user-admin, applications, *, */*, allow
+      g, alice, role:local-user-admin
+
+      p, role:org-devops, applications, *, */*, allow
+      p, role:org-devops, clusters, *, *, allow
+      p, role:org-devops, repositories, *, *, allow
+      g, xxx:devops, role:org-devops
+
+      p, role:org-backend, applications, get, */*, allow
+      p, role:org-backend, clusters, get, *, allow
+      p, role:org-backend, repositories, get, *, allow
+      g, xxx:backend, role:org-backend
 
 redis:
   enabled: true

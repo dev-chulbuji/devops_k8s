@@ -1,9 +1,10 @@
 replicas: 1
 image:
   repository: 657976307134.dkr.ecr.ap-northeast-2.amazonaws.com/demo
-  tag: 1.0.9
+  tag: latest
   imagePullSecrets:
-    - name: regcred
+  - name: ecr-cred
+
 service:
   type: NodePort
   protocol: TCP
