@@ -1,7 +1,7 @@
 replicas: 1
 image:
   repository: 657976307134.dkr.ecr.ap-northeast-2.amazonaws.com/demo
-  tag: 1.0.1
+  tag: 1.1.1
   imagePullSecrets:
     - name: ecr-cred
 service:
