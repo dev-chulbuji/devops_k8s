@@ -2,6 +2,7 @@ repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
 apps:
   - name: prometheus
     project: dev
+    namespace: prom
     source:
       path: prometheus
   - name: demo
