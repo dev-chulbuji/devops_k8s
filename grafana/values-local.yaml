@@ -9,7 +9,4 @@ service:
   type: NodePort
   nodePort: 32081
 
-grafana.ini:
-  security:
-    admin_user: admin
-    admin_password: admin
+#grafana.ini:
