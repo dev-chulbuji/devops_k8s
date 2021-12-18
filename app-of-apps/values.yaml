@@ -8,6 +8,14 @@ apps:
       customValues: true
       values:
         - values-local.yaml
+  - name: grafana
+    project: dev
+    namespace: grafana
+    source:
+      path: grafana
+      customValues: true
+      values:
+        - values-local.yaml
   - name: demo
     project: dev
     namespace: default

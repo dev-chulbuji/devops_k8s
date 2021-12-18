@@ -1,0 +1,10 @@
+autoscaling:
+  enabled: false
+
+testFramework:
+  enabled: false
+
+service:
+  enabled: true
+  type: NodePort
+  nodePort: 33080
