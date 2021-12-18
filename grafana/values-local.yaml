@@ -9,10 +9,14 @@ service:
   type: NodePort
   nodePort: 32081
 
-grafana.ini:
-  datasources:
-    name: Prometheus
-    type: prometheus
-    url: http://prometheus-server.prom.svc.cluster.local
-    access: proxy
-    isDefault: true
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus-server.prom.svc.cluster.local
+        access: proxy
+        isDefault: true
+
+#grafana.ini:
