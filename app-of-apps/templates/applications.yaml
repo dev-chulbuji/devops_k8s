@@ -15,8 +15,10 @@ spec:
     repoURL: {{ $.Values.repoURL }}
     targetRevision: HEAD
     helm:
+      {{- if and $app.source.customValues }}
       valueFiles:
-        - values.yaml
+        {{ toYaml $app.source.values }}
+      {{- end }}
   syncPolicy:
     automated:
       prune: true

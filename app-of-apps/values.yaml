@@ -5,6 +5,9 @@ apps:
     namespace: prom
     source:
       path: prometheus
+      customValues: true
+      values:
+        - values-local.yaml
   - name: demo
     project: dev
     namespace: default
