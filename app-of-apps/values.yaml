@@ -1,5 +1,9 @@
 repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
 apps:
+  - name: prometheus
+    project: dev
+    source:
+      path: prometheus
   - name: demo
     project: dev
     source:
