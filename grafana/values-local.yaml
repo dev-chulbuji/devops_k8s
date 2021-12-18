@@ -7,4 +7,4 @@ testFramework:
 service:
   enabled: true
   type: NodePort
-  nodePort: 33080
+  nodePort: 32081
