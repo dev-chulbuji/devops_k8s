@@ -3,6 +3,7 @@ configmapReload:
 
 nodeExporter:
   enabled: true
+  hostRootfs: false
 
 server:
   enabled: true
@@ -10,7 +11,6 @@ server:
   service:
     nodePort: 32080
     type: NodePort
-
 
 alertmanager:
   enabled: true
