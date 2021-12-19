@@ -22,5 +22,5 @@ apps:
     source:
       path: demo
       customValues: true
-        values:
-          - values-eks.yaml
+      values:
+        - values-eks.yaml
