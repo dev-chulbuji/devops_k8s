@@ -16,41 +16,37 @@ server:
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/scheme: internet-facing
-      alb.ingress.kubernetes.io/tags: Environment=dev,Name=argocd-alb
+      alb.ingress.kubernetes.io/tags: Environment=prod,Name=argocd-alb
   extraArgs:
     - --insecure
   config:
-    url: http://127.0.0.1:30080
-
+#    url: http://127.0.0.1:30080
     accounts.admin: apiKey, login
-    accounts.test: apiKey, login
-    accounts.test1: apiKey, login
-
     repositories: |
       - url: https://github.com/dev-chulbuji/devops_k8s.git
       - url: https://github.com/dev-chulbuji/devops_sample_app_python.git
 
-    dex.config: |
-      connectors:
-        - type: github
-          id: github
-          name: GitHub
-          config:
-            clientID: xxx
-            clientSecret: xxx
-            orgs:
-            - name: xxx
+#    dex.config: |
+#      connectors:
+#        - type: github
+#          id: github
+#          name: GitHub
+#          config:
+#            clientID: xxx
+#            clientSecret: xxx
+#            orgs:
+#            - name: xxx
 
   rbacConfig:
     policy.default: role:readonly
-    policy.csv: |
-      p, role:org-admin, applications, *, */*, allow
-      p, role:org-admin, clusters, get, *, allow
-      p, role:org-admin, repositories, get, *, allow
-      p, role:org-admin, repositories, create, *, allow
-      p, role:org-admin, repositories, update, *, allow
-      p, role:org-admin, repositories, delete, *, allow
-      g, xxx:devops, role:org-admin
+#    policy.csv: |
+#      p, role:org-admin, applications, *, */*, allow
+#      p, role:org-admin, clusters, get, *, allow
+#      p, role:org-admin, repositories, get, *, allow
+#      p, role:org-admin, repositories, create, *, allow
+#      p, role:org-admin, repositories, update, *, allow
+#      p, role:org-admin, repositories, delete, *, allow
+#      g, xxx:devops, role:org-admin
 
 redis:
   enabled: true

@@ -11,6 +11,9 @@ upgrade-eks:
 	  -f values-eks.yaml \
 	  .
 
+delete:
+	helm delete -n argo argocd
+
 template-eks:
 	helm template -n argo -f values-eks.yaml argocd .
 template-local:
