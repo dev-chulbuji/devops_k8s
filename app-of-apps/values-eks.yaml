@@ -1,21 +1,5 @@
 repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
 apps:
-  - name: prometheus
-    project: default
-    namespace: prom
-    source:
-      path: prometheus
-      customValues: true
-      values:
-        - values-eks.yaml
-  - name: grafana
-    project: default
-    namespace: grafana
-    source:
-      path: grafana
-      customValues: true
-      values:
-        - values-eks.yaml
   - name: demo
     project: default
     namespace: default
