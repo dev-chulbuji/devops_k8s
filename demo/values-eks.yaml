@@ -10,3 +10,10 @@ service:
   targetPort: 8080
   port: 8080
   nodePort: 31080
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/tags: Environment=prod,Name=demo-alb
