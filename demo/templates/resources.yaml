@@ -60,5 +60,5 @@ spec:
               service:
                 name: {{ template "sample-helm.fullname" . }}
                 port:
-                  number: 80
+                  number: {{ .Values.service.port }}
 {{- end -}}
