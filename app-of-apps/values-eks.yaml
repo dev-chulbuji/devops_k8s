@@ -1,13 +1,5 @@
 repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
 apps:
-  - name: aws-load-balancer-controller
-    project: default
-    namespace: kube-system
-    source:
-      path: aws-load-balancer-controller
-      customValues: true
-      values:
-        - values-eks.yaml
   - name: demo
     project: default
     namespace: default
