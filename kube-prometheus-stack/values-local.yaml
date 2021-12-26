@@ -17,7 +17,6 @@ kubeControllerManager:
   enabled: false
 coreDns:
   enabled: false
-
 kubeDns:
   enabled: false
 kubeEtcd:
@@ -37,6 +36,7 @@ prometheusOperator:
   service:
     type: NodePort
     nodeProt: 31080
+    nodePortTls: 31443
   serviceMonitor:
     selfMonitor: false
   createCustomResource: true
