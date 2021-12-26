@@ -8,3 +8,19 @@ apps:
       customValues: true
       values:
         - values-eks.yaml
+  - name: prometheus
+    project: dev
+    namespace: prom
+    source:
+      path: prometheus
+      customValues: true
+      values:
+        - values-eks.yaml
+  - name: grafana
+    project: dev
+    namespace: grafana
+    source:
+      path: grafana
+      customValues: true
+      values:
+        - values-eks.yaml

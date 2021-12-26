@@ -1,0 +1,27 @@
+autoscaling:
+  enabled: false
+
+testFramework:
+  enabled: false
+
+service:
+  enabled: true
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/tags: Environment=prod,Name=grafana-alb
+
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: Prometheus
+        type: prometheus
+        url: http://prometheus-server.prom.svc.cluster.local
+        access: proxy
+        isDefault: true
+
+#grafana.ini:

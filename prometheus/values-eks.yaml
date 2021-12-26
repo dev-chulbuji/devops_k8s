@@ -1,0 +1,12 @@
+configmapReload:
+  enabled: false
+
+nodeExporter:
+  enabled: true
+  hostRootfs: false
+
+server:
+  enabled: true
+
+alertmanager:
+  enabled: true
