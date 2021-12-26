@@ -6,6 +6,8 @@ testFramework:
 
 service:
   enabled: true
+  type: NodePort
+  nodePort: 32081
 
 ingress:
   enabled: true
