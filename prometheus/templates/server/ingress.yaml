@@ -28,6 +28,7 @@ spec:
   ingressClassName: {{ .Values.server.ingress.ingressClassName }}
   {{- end }}
   rules:
+  {{- if .Values.server.ingress.hosts  }}
   {{- range .Values.server.ingress.hosts }}
     {{- $url := splitList "/" . }}
     - host: {{ first $url }}
@@ -51,6 +52,26 @@ spec:
               servicePort: {{ $servicePort }}
               {{- end }}
   {{- end -}}
+  {{- else }}
+    - http:
+        paths:
+          - backend:
+              {{- if $ingressApiIsStable }}
+              service:
+                name: {{ $serviceName }}
+                port:
+                  number: {{ $servicePort }}
+              {{- else }}
+              serviceName: {{ $serviceName }}
+              servicePort: {{ $servicePort }}
+              {{- end }}
+            {{- if $ingressPath }}
+            path: {{ $ingressPath }}
+            {{- end }}
+            {{- if $ingressSupportsPathType }}
+            pathType: {{ $ingressPathType }}
+            {{- end }}
+  {{- end }}
 {{- if .Values.server.ingress.tls }}
   tls:
 {{ toYaml .Values.server.ingress.tls | indent 4 }}
