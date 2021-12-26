@@ -12,5 +12,12 @@ server:
     nodePort: 32080
     type: NodePort
 
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: alb
+      alb.ingress.kubernetes.io/scheme: internet-facing
+      alb.ingress.kubernetes.io/tags: Environment=prod,Name=prometheus-alb
+
 alertmanager:
   enabled: true
