@@ -9,7 +9,7 @@ apps:
       values:
         - values-eks.yaml
   - name: prometheus
-    project: dev
+    project: default
     namespace: prom
     source:
       path: prometheus
@@ -17,7 +17,7 @@ apps:
       values:
         - values-eks.yaml
   - name: grafana
-    project: dev
+    project: default
     namespace: grafana
     source:
       path: grafana
