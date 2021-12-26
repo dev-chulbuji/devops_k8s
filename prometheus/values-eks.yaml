@@ -8,5 +8,9 @@ nodeExporter:
 server:
   enabled: true
 
+  service:
+    nodePort: 32080
+    type: NodePort
+
 alertmanager:
   enabled: true

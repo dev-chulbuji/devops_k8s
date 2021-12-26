@@ -25,5 +25,3 @@ datasources:
         url: http://prometheus-server.prom.svc.cluster.local
         access: proxy
         isDefault: true
-
-#grafana.ini:

@@ -11,32 +11,39 @@ grafana:
 
 kubeApiServer:
   enabled: false
+
 kubelet:
   enabled: false
+
 kubeControllerManager:
   enabled: false
+
 coreDns:
   enabled: false
+
 kubeDns:
   enabled: false
+
 kubeEtcd:
   enabled: false
+
 kubeScheduler:
   enabled: false
+
 kubeProxy:
   enabled: false
+
 kubeStateMetrics:
   enabled: false
+
 nodeExporter:
   enabled: false
+
 prometheus:
-  enabled: false
+  enabled: true
+
 prometheusOperator:
   enabled: true
-  service:
-    type: NodePort
-    nodeProt: 31080
-    nodePortTls: 31443
   serviceMonitor:
     selfMonitor: false
   createCustomResource: true
