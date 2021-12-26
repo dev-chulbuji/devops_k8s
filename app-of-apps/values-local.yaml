@@ -1,5 +1,13 @@
 repoURL: 'https://github.com/dev-chulbuji/devops_k8s.git'
 apps:
+  - name: prometheus-operator
+    project: dev
+    namespace: prom
+    source:
+      path: kube-prometheus-stack
+      customValues: true
+      values:
+        - values-local.yaml
   - name: prometheus
     project: dev
     namespace: prom
