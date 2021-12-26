@@ -43,8 +43,6 @@ prometheusOperator:
       memory: 1Gi
   serviceMonitor:
     selfMonitor: false
-  nodeSelector:
-    monitoring: enabled
   createCustomResource: true
   cleanupCustomResource: true
   cleanupCustomResourceBeforeInstall: true
