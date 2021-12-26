@@ -195,8 +195,8 @@ ingress:
   # pathType is only for k8s >= 1.1=
   pathType: Prefix
 
-  hosts:
-    - chart-example.local
+  hosts: []
+  
   ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
   extraPaths: []
   # - path: /*
