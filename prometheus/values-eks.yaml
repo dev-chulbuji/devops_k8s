@@ -1,9 +1,12 @@
 configmapReload:
   enabled: false
 
+kubeStateMetrics:
+  enabled: true
+
 nodeExporter:
   enabled: true
-  hostRootfs: false
+  hostRootfs: true
 
 server:
   enabled: true

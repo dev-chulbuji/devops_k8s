@@ -1,6 +1,9 @@
 configmapReload:
   enabled: false
 
+kubeStateMetrics:
+  enabled: true
+
 nodeExporter:
   enabled: true
   hostRootfs: false
@@ -14,3 +17,25 @@ server:
 
 alertmanager:
   enabled: true
+
+  service:
+    nodePort: 32082
+    type: NodePort
+
+extraScrapeConfigs:
+#   - job_name: 'prometheus-blackbox-exporter'
+#     metrics_path: /probe
+#     params:
+#       module: [http_2xx]
+#     static_configs:
+#       - targets:
+#           - http://host.docker.internal:9090
+#           - http://host.docker.internal:3000
+#           - http://host.docker.internal:8080
+#     relabel_configs:
+#       - source_labels: [__address__]
+#         target_label: __param_target
+#       - source_labels: [__param_target]
+#         target_label: instance
+#       - target_label: __address__
+#         replacement: prometheus-blackbox-exporter:9115
