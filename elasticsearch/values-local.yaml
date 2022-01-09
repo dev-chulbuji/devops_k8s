@@ -1,11 +1,9 @@
 clusterName: "elasticsearch-local"
-extraEnvs:
-  - name: ES_SETTING_BOOTSTRAP_MEMORY__LOCK
-    value: true
-  - name: xpack.security.enabled
-    value: false
 
 esJavaOpts: "-Xmx512m -Xms512m -Xlog:disable"
+esConfig:
+  elasticsearch.yml: |
+    xpack.security.enabled: false
 
 resources:
   requests:
