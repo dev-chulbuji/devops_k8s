@@ -24,14 +24,6 @@ apps:
       customValues: true
       values:
         - values-local.yaml
-  - name: elasticsearch
-    project: dev
-    namespace: elastic
-    source:
-      path: elasticsearch
-      customValues: true
-      values:
-        - values-local.yaml
   - name: demo
     project: dev
     namespace: default
