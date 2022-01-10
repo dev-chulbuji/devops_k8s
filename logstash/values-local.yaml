@@ -47,3 +47,6 @@ logstashPipeline:
         index => "%{[@metadata][beat]}-%{[@metadata][version]}"
       }
     }
+
+readinessProbe:
+  initialDelaySeconds: 120
