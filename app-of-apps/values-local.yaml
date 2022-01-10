@@ -24,6 +24,14 @@ apps:
       customValues: true
       values:
         - values-local.yaml
+  - name: logstash
+    project: default
+    namespace: elastic
+    source:
+      path: logstash
+      customValues: true
+      values:
+        - values-local.yaml
   - name: demo
     project: dev
     namespace: default

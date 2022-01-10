@@ -1,0 +1,32 @@
+replicas: 1
+
+image: "docker.elastic.co/logstash/logstash"
+imageTag: "7.16.2"
+
+logstashJavaOpts: "-Xmx512m -Xms512m"
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "512Mi"
+  limits:
+    cpu: "1000m"
+    memory: "1536Mi"
+
+logstashPipeline:
+  logstash.conf: |
+    input {
+      beats {
+        port => 5044
+      }
+    }
+
+    filter {
+    }
+
+    output {
+      elasticsearch {
+        hosts => ["http://host.docker.internal:9200"]
+        index => "%{[@metadata][beat]}-%{[@metadata][version]}"
+      }
+    }
