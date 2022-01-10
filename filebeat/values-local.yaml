@@ -20,7 +20,7 @@ daemonset:
 
       output.logstash:
         host: '${NODE_NAME}'
-        hosts: 'logstash-logstash-headless.elastic.svc.cluster.local:5044'
+        hosts: 'logstash-logstash:5044'
 
 deployment:
   enabled: false
