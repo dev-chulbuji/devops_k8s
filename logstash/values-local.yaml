@@ -29,6 +29,7 @@ service:
 logstashConfig:
   logstash.yml: |
     pipeline.ecs_compatibility: disabled
+    http.host: 0.0.0.0
 
 logstashPipeline:
   logstash.conf: |
@@ -49,4 +50,11 @@ logstashPipeline:
     }
 
 readinessProbe:
-  initialDelaySeconds: 120
+  httpGet:
+    path: /
+    port: monitor
+  initialDelaySeconds: 60
+  # periodSeconds: 30
+  timeoutSeconds: 30
+  # failureThreshold: 6
+  # successThreshold: 1
