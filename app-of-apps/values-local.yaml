@@ -32,6 +32,14 @@ apps:
       customValues: true
       values:
         - values-local.yaml
+  - name: filebeat
+    project: default
+    namespace: elastic
+    source:
+      path: filebeat
+      customValues: true
+      values:
+        - values-local.yaml
   - name: demo
     project: dev
     namespace: default
