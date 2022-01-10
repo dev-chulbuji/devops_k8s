@@ -12,6 +12,9 @@ resources:
   limits:
     cpu: "1000m"
     memory: "1536Mi"
+logstashConfig:
+  logstash.yml: |
+    pipeline.ecs_compatibility: disabled
 
 logstashPipeline:
   logstash.conf: |
