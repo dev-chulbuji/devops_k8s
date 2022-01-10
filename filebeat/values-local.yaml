@@ -6,6 +6,7 @@ daemonset:
   extraEnvs: []
   filebeatConfig:
     filebeat.yml: |
+      monitoring.enabled: false
       filebeat.inputs:
       - type: container
         paths:
