@@ -8,7 +8,7 @@ logstashJavaOpts: "-Xmx512m -Xms512m"
 resources:
   requests:
     cpu: "500m"
-    memory: "512Mi"
+    memory: "1536Mi"
   limits:
     cpu: "1000m"
     memory: "1536Mi"
@@ -48,13 +48,3 @@ logstashPipeline:
         index => "%{[@metadata][beat]}-%{[@metadata][version]}"
       }
     }
-
-readinessProbe:
-  httpGet:
-    path: /
-    port: monitor
-  initialDelaySeconds: 60
-  # periodSeconds: 30
-  timeoutSeconds: 30
-  # failureThreshold: 6
-  # successThreshold: 1
