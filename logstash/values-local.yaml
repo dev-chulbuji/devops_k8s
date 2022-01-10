@@ -12,6 +12,20 @@ resources:
   limits:
     cpu: "1000m"
     memory: "1536Mi"
+
+service:
+  annotations: {}
+  type: ClusterIP
+  ports:
+    - name: beats
+      port: 5044
+      protocol: TCP
+      targetPort: 5044
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+
 logstashConfig:
   logstash.yml: |
     pipeline.ecs_compatibility: disabled
