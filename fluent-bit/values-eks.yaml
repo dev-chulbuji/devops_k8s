@@ -1,7 +1,7 @@
 kind: DaemonSet
 image:
-  repository: amazon/aws-for-fluent-bit
-  tag: 2.5.0
+  repository: public.ecr.aws/aws-observability/aws-for-fluent-bit
+  tag: latest
   pullPolicy: Always
 
 nameOverride: "fluentbit"
@@ -53,10 +53,11 @@ config:
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
-        Name  kinesis_streams
-        Match *
+        Name   firehose
+        Match  *
         region ap-northeast-2
-        stream eks-log-stream
+        delivery_stream eks-log-delivery-stream
+        replace_dots _
 
   ## https://docs.fluentbit.io/manual/pipeline/parsers
   customParsers: |
