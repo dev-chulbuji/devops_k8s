@@ -24,3 +24,11 @@ apps:
       customValues: true
       values:
         - values-eks.yaml
+  - name: fluentbit
+    project: default
+    namespace: fluentbit
+    source:
+      path: flunet-bit
+      customValues: true
+      values:
+        - values-eks.yaml
