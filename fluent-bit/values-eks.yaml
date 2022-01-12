@@ -56,7 +56,7 @@ config:
         Name  kinesis_streams
         Match *
         region ap-northeast-2
-        stream eks-log-delivery-stream
+        stream eks-log-stream
 
   ## https://docs.fluentbit.io/manual/pipeline/parsers
   customParsers: |
