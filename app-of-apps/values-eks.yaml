@@ -28,7 +28,7 @@ apps:
     project: default
     namespace: fluentbit
     source:
-      path: flunet-bit
+      path: fluent-bit
       customValues: true
       values:
         - values-eks.yaml
