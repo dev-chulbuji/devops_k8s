@@ -53,19 +53,10 @@ config:
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
-        Name es
-        Match kube.*
-        Host elasticsearch-master
-        Logstash_Format On
-        Retry_Limit False
-
-    [OUTPUT]
-        Name es
-        Match host.*
-        Host elasticsearch-master
-        Logstash_Format On
-        Logstash_Prefix node
-        Retry_Limit False
+        Name  kinesis_streams
+        Match *
+        region ap-northeast-2
+        stream eks-log-stream
 
   ## https://docs.fluentbit.io/manual/pipeline/parsers
   customParsers: |
