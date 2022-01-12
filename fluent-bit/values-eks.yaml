@@ -53,7 +53,7 @@ config:
   ## https://docs.fluentbit.io/manual/pipeline/outputs
   outputs: |
     [OUTPUT]
-        Name  kinesis_streams
+        Name  eks-log-delivery-stream
         Match *
         region ap-northeast-2
         stream eks-log-stream
