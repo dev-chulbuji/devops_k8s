@@ -17,10 +17,6 @@ config:
         HTTP_Listen   0.0.0.0
         HTTP_Port     2020
 
-    @INCLUDE input-kubernetes.conf
-    @INCLUDE filter-kubernetes.conf
-    @INCLUDE output-elasticsearch.c
-
   ## https://docs.fluentbit.io/manual/pipeline/inputs
   inputs: |
     [INPUT]
