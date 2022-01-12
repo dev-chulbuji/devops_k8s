@@ -1,6 +1,6 @@
 kind: DaemonSet
 image:
-  repository: public.ecr.aws/aws-observability/aws-for-fluent-bit
+  repository: amazon/aws-for-fluent-bit
   tag: 2.5.0
   pullPolicy: Always
 
