@@ -1,6 +1,8 @@
 image:
-  repository: amazon/aws-cli:latest
-  tag: 1.2.6
-  imagePullSecrets:
-    - name: ecr-cred
-  args: ["s3", "ls"]
+  repository: amazon/aws-cli
+  tag: latest
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: aws-cli
