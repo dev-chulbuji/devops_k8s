@@ -4,3 +4,8 @@ image:
   imagePullSecrets:
     - name: ecr-cred
   args: ["s3", "ls"]
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: aws-cli

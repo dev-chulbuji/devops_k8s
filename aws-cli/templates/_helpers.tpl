@@ -19,3 +19,11 @@
 app.kubernetes.io/name: {{ include "sample-helm.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
+{{- define "sample-helm.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create -}}
+    {{ default (include "sample-helm.fullname" .) .Values.serviceAccount.name }}
+{{- else -}}
+    {{ default "default" .Values.serviceAccount.name }}
+{{- end -}}
+{{- end -}}
