@@ -7,7 +7,7 @@ image:
 
 serviceAccount:
   create: true
-  annotations: {}
+#  annotations: {}
 #    eks.amazonaws.com/role-arn: >-
 #      arn:aws:iam::552661052297:role/irsa-test-role
   name: aws-cli
