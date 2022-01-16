@@ -32,3 +32,11 @@ apps:
       customValues: true
       values:
         - values-eks.yaml
+  - name: aws-cli-batch
+    project: default
+    namespace: default
+    source:
+      path: aws-cli
+      customValues: true
+      values:
+        - values-eks.yaml
