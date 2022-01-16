@@ -1,9 +1,7 @@
 image:
   repository: amazon/aws-cli
   tag: latest
-  imagePullSecrets:
-    - name: ecr-cred
-  args: ["s3", "ls"]
+  args: ["aws", "s3", "ls"]
 
 serviceAccount:
   create: true
