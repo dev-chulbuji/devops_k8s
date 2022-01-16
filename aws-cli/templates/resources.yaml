@@ -8,7 +8,7 @@ spec:
       labels:
         app: eks-iam-test-s3
     spec:
-      serviceAccountName: iam-test
+      serviceAccountName: {{ include "sample-helm.serviceAccountName" . }}
       containers:
       - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
