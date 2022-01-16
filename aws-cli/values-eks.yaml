@@ -9,5 +9,5 @@ serviceAccount:
   create: true
   annotations:
     eks.amazonaws.com/role-arn: >-
-      arn:aws:iam::552661052297:role/aws-cli-role
+      arn:aws:iam::552661052297:role/irsa-test-role
   name: aws-cli
