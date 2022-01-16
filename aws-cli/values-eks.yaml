@@ -1,7 +1,7 @@
 image:
   repository: amazon/aws-cli
   tag: latest
-  args: ["s3", "ls"]
+  args: ["s3api", "ls"]
 
 serviceAccount:
   create: true
